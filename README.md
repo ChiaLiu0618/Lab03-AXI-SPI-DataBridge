@@ -61,14 +61,19 @@ Implements command-based SPI communication with the SD card:
 6. **Input delay**: 0.5 × clock period
 7. **Output delay**: 0.5 × clock period
 8. **Latency Limit**: Execution must complete within 10,000 cycles
-9. **Forbidden Elements**:
-   - Latches
+9. **Synthesis Constraints:**
+   - Must have "MET" slack at end of timing report.
+   - No latches allowed.
 10. **Reset Behavior**:
     - All outputs reset to 0
     - out_data must remain 0 when out_valid is low
 
 ## Simulation and Testing
-
+The project includes multiple verification steps:
+- **RTL Simulation**: The RTL simulation is performed using Synopsys VCS.
+- **Synthesis**: The design is synthesized using Synopsys Design Compiler with TSMC 40nm technology.
+- **Gate-Level Simulation**: The synthesized design is simulated using Synopsys VCS.
+- **Waveform Debugging**: Synopsys Verdi is used to inspect signals and debug the design.
 
 ## Hints
 - Reuse modules where appropriate (e.g., shift registers).
