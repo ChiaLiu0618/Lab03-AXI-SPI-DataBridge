@@ -1,22 +1,3 @@
-//############################################################################
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//   (C) Copyright Laboratory System Integration and Silicon Implementation
-//   All Right Reserved
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//
-//   2023 ICLAB Fall Course
-//   Lab03      : BRIDGE
-//   Author     : Ting-Yu Chang
-//                
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//
-//   File Name   : BRIDGE_encrypted.v
-//   Module Name : BRIDGE
-//   Release version : v1.0 (Release Date: Sep-2023)
-//
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//############################################################################
-
 module BRIDGE(
     // Input Signals
     clk,
@@ -481,5 +462,6 @@ end
 
     // Stop call
 assign DRAM_stop_call = (B_READY && B_VALID && (B_RESP == 2'b00)) || (R_READY && R_VALID && (R_RESP == 2'b00));
+
 
 endmodule
